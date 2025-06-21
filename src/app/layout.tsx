@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Visualizador Aethelred',
-  description: 'Uma aplicação web moderna e limpa para um visualizador de relatórios médicos fictício.',
+  title: 'Sistema de Prontuários Médicos',
+  description: 'Uma aplicação web para visualização e gerenciamento de relatórios médicos realistas.',
 };
 
 export default function RootLayout({

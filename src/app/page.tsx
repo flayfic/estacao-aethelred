@@ -22,13 +22,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-const AethelredLogo = () => (
+const MedicalLogo = () => (
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary">
-        <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
-        <path d="M12 12L22 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 12V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M12 12L2 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M7 9.5L17 14.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 5V19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
 )
 
@@ -40,10 +37,10 @@ export default function HomePage() {
         <Sidebar variant="inset" collapsible="icon">
           <SidebarHeader>
             <div className="flex items-center gap-2 p-2">
-                <AethelredLogo />
+                <MedicalLogo />
                 <div className="flex flex-col">
-                  <span className="text-lg font-semibold tracking-tight text-foreground">Visualizador Aethelred</span>
-                  <span className="text-xs text-muted-foreground">Estação Aethelred</span>
+                  <span className="text-lg font-semibold tracking-tight text-foreground">Sistema de Prontuários</span>
+                  <span className="text-xs text-muted-foreground">Clínica Central</span>
                 </div>
             </div>
           </SidebarHeader>
@@ -63,10 +60,10 @@ export default function HomePage() {
                   <div className="group/menu-item relative">
                     <button className="flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 focus-visible:ring-ring">
                        <Avatar className="h-8 w-8">
-                         <AvatarImage src="https://placehold.co/100x100.png" alt="Dr. Aris" data-ai-hint="doctor portrait"/>
-                         <AvatarFallback>DA</AvatarFallback>
+                         <AvatarImage src="https://placehold.co/100x100.png" alt="Dr. Ricardo Souza" data-ai-hint="doctor portrait"/>
+                         <AvatarFallback>RS</AvatarFallback>
                        </Avatar>
-                       <span className="min-w-0 truncate">Dr. Aris Thorne</span>
+                       <span className="min-w-0 truncate">Dr. Ricardo Souza</span>
                     </button>
                   </div>
                 </DropdownMenuTrigger>

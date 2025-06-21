@@ -1,8 +1,8 @@
 export type VitalSigns = {
-  'Frequência Cardíaca Quântica Entrelaçada': string;
-  'Atividade Neuro-Sináptica': string;
-  'Flutuação do Biocampo': string;
-  'Ressonância Etérea': string;
+  'Frequência Cardíaca': string;
+  'Pressão Arterial': string;
+  'Temperatura Corporal': string;
+  'Saturação de Oxigênio': string;
 };
 
 export type Report = {

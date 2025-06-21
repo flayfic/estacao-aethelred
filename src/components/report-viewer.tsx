@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Report } from '@/lib/types';
-import { HeartPulse, BrainCircuit, Signal, Waves, Info } from 'lucide-react';
+import { HeartPulse, Activity, Thermometer, AirVent, Info } from 'lucide-react';
 import DashboardMetrics from './dashboard-metrics';
 
 const severityVariantMap: Record<Report['severity'], 'destructive' | 'secondary' | 'default'> = {
@@ -24,9 +24,9 @@ const severityOutlineMap: Record<Report['severity'], boolean> = {
 
 const VitalSignIcon = ({ vitalName }: { vitalName: string }) => {
     if (vitalName.includes('Frequência Cardíaca')) return <HeartPulse className="h-5 w-5 text-primary" />;
-    if (vitalName.includes('Neuro-Sináptica')) return <BrainCircuit className="h-5 w-5 text-primary" />;
-    if (vitalName.includes('Biocampo')) return <Signal className="h-5 w-5 text-primary" />;
-    if (vitalName.includes('Etérea')) return <Waves className="h-5 w-5 text-primary" />;
+    if (vitalName.includes('Pressão Arterial')) return <Activity className="h-5 w-5 text-primary" />;
+    if (vitalName.includes('Temperatura Corporal')) return <Thermometer className="h-5 w-5 text-primary" />;
+    if (vitalName.includes('Saturação de Oxigênio')) return <AirVent className="h-5 w-5 text-primary" />;
     return <Info className="h-5 w-5 text-primary" />;
 };
 
