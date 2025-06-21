@@ -5,8 +5,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Report } from '@/lib/types';
-import { HeartPulse, Activity, Thermometer, AirVent, Info } from 'lucide-react';
+import { HeartPulse, Activity, Thermometer, AirVent, Info, FileText } from 'lucide-react';
 import DashboardMetrics from './dashboard-metrics';
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const severityVariantMap: Record<Report['severity'], 'destructive' | 'secondary' | 'default' | 'outline'> = {
     'Crítica': 'destructive',
@@ -14,13 +17,6 @@ const severityVariantMap: Record<Report['severity'], 'destructive' | 'secondary'
     'Média': 'secondary',
     'Baixa': 'default',
 };
-
-const severityOutlineMap: Record<Report['severity'], boolean> = {
-    'Crítica': false,
-    'Alta': true,
-    'Média': false,
-    'Baixa': false,
-}
 
 const VitalSignIcon = ({ vitalName }: { vitalName: string }) => {
     if (vitalName.includes('Frequência Cardíaca')) return <HeartPulse className="h-5 w-5 text-primary" />;
@@ -31,7 +27,7 @@ const VitalSignIcon = ({ vitalName }: { vitalName: string }) => {
 };
 
 const ReportDetails = ({ report }: { report: Report }) => (
-    <div className="space-y-4">
+    <div className="space-y-6">
         <div>
             <h4 className="font-semibold text-foreground">Diagnóstico</h4>
             <p className="text-muted-foreground">{report.diagnosis}</p>
@@ -56,6 +52,29 @@ const ReportDetails = ({ report }: { report: Report }) => (
             <h4 className="font-semibold text-foreground">Notas de Tratamento</h4>
             <p className="text-muted-foreground whitespace-pre-wrap">{report.treatmentNotes}</p>
         </div>
+        <div className="flex justify-end pt-2">
+            <Dialog>
+                <DialogTrigger asChild>
+                    <Button variant="outline">
+                        <FileText className="mr-2 h-4 w-4" />
+                        Ver Relatório Completo
+                    </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[625px]">
+                    <DialogHeader>
+                        <DialogTitle>Relatório Completo</DialogTitle>
+                        <DialogDescription>
+                            Paciente: {report.patientName} (ID: {report.patientId})
+                        </DialogDescription>
+                    </DialogHeader>
+                    <ScrollArea className="h-96 pr-6">
+                        <p className="text-sm text-muted-foreground whitespace-pre-wrap">
+                            {report.fullReportText}
+                        </p>
+                    </ScrollArea>
+                </DialogContent>
+            </Dialog>
+        </div>
     </div>
 );
 
@@ -79,7 +98,7 @@ export default function ReportViewer() {
                                             <p className="font-semibold">{report.patientName}</p>
                                             <p className="text-sm text-muted-foreground">ID: {report.patientId} &bull; {report.date}</p>
                                         </div>
-                                        <Badge variant={severityVariantMap[report.severity]} className={severityOutlineMap[report.severity] ? 'border-destructive text-destructive' : ''}>
+                                        <Badge variant={severityVariantMap[report.severity]} className={report.severity === 'Alta' ? 'border-destructive text-destructive' : ''}>
                                             {report.severity}
                                         </Badge>
                                     </div>
