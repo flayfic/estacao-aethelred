@@ -8,9 +8,9 @@ import type { Report } from '@/lib/types';
 import { HeartPulse, Activity, Thermometer, AirVent, Info } from 'lucide-react';
 import DashboardMetrics from './dashboard-metrics';
 
-const severityVariantMap: Record<Report['severity'], 'destructive' | 'secondary' | 'default'> = {
+const severityVariantMap: Record<Report['severity'], 'destructive' | 'secondary' | 'default' | 'outline'> = {
     'Crítica': 'destructive',
-    'Alta': 'destructive',
+    'Alta': 'outline',
     'Média': 'secondary',
     'Baixa': 'default',
 };
