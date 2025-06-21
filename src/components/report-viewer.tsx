@@ -1,18 +1,12 @@
 "use client";
 
-import { useState } from 'react';
 import { mockReports } from "@/lib/mock-data";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import type { Report, AISummary } from '@/lib/types';
-import { getReportSummary } from '@/app/actions';
-import { Button } from './ui/button';
-import { Bot, Loader2, HeartPulse, BrainCircuit, Signal, Waves, Info } from 'lucide-react';
-import { Skeleton } from './ui/skeleton';
-import { useToast } from "@/hooks/use-toast";
+import type { Report } from '@/lib/types';
+import { HeartPulse, BrainCircuit, Signal, Waves, Info } from 'lucide-react';
 import DashboardMetrics from './dashboard-metrics';
-import { Alert, AlertDescription, AlertTitle } from './ui/alert';
 
 const severityVariantMap: Record<Report['severity'], 'destructive' | 'secondary' | 'default'> = {
     'Critical': 'destructive',
@@ -65,80 +59,15 @@ const ReportDetails = ({ report }: { report: Report }) => (
     </div>
 );
 
-const AiSummaryDisplay = ({ summary, isLoading }: { summary: AISummary | null, isLoading: boolean }) => {
-    if (isLoading) {
-        return (
-            <div className="space-y-4">
-                <Skeleton className="h-6 w-1/4" />
-                <Skeleton className="h-4 w-full" />
-                <Skeleton className="h-4 w-5/6" />
-                <Skeleton className="h-6 w-1/3 mt-4" />
-                <div className="space-y-2">
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-4/6" />
-                </div>
-            </div>
-        );
-    }
-
-    if (!summary) return null;
-
-    return (
-         <Alert>
-            <Bot className="h-4 w-4" />
-            <AlertTitle>AI-Generated Summary</AlertTitle>
-            <AlertDescription className="space-y-4">
-                <p>{summary.summary}</p>
-                 <div>
-                    <h5 className="font-semibold">Key Insights:</h5>
-                    <ul className="list-disc pl-5 space-y-1 mt-1">
-                        {summary.keyInsights.map((insight, index) => (
-                            <li key={index}>{insight}</li>
-                        ))}
-                    </ul>
-                </div>
-            </AlertDescription>
-        </Alert>
-    );
-};
-
 
 export default function ReportViewer() {
-    const { toast } = useToast();
-    const [summaries, setSummaries] = useState<Record<string, AISummary | null>>({});
-    const [loadingStates, setLoadingStates] = useState<Record<string, boolean>>({});
-
-    const handleSummarize = async (report: Report) => {
-        if (summaries[report.id] || loadingStates[report.id]) return;
-
-        setLoadingStates(prev => ({ ...prev, [report.id]: true }));
-        try {
-            const result = await getReportSummary(report.fullReportText);
-            if(result) {
-                 setSummaries(prev => ({ ...prev, [report.id]: result }));
-            } else {
-                throw new Error("AI summary generation failed.");
-            }
-        } catch (error) {
-            console.error(error);
-            toast({
-                variant: "destructive",
-                title: "Error",
-                description: "Could not generate AI summary. Please try again later.",
-            });
-        } finally {
-            setLoadingStates(prev => ({ ...prev, [report.id]: false }));
-        }
-    };
-
     return (
         <div className="space-y-6">
             <DashboardMetrics reports={mockReports} />
             <Card>
                 <CardHeader>
                     <CardTitle>Patient Reports</CardTitle>
-                    <CardDescription>Select a report to view details and generate an AI summary.</CardDescription>
+                    <CardDescription>Select a report to view details.</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <Accordion type="single" collapsible className="w-full">
@@ -156,24 +85,7 @@ export default function ReportViewer() {
                                     </div>
                                 </AccordionTrigger>
                                 <AccordionContent className="p-4 bg-background/50 rounded-b-md">
-                                    <div className="grid md:grid-cols-2 gap-8">
-                                        <ReportDetails report={report} />
-                                        <div className="space-y-4">
-                                            <Button 
-                                                onClick={() => handleSummarize(report)}
-                                                disabled={loadingStates[report.id]}
-                                                className="w-full"
-                                            >
-                                                {loadingStates[report.id] ? (
-                                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                                ) : (
-                                                    <Bot className="mr-2 h-4 w-4" />
-                                                )}
-                                                {summaries[report.id] ? 'Summary Generated' : 'Summarize with AI'}
-                                            </Button>
-                                            <AiSummaryDisplay summary={summaries[report.id] ?? null} isLoading={loadingStates[report.id] ?? false} />
-                                        </div>
-                                    </div>
+                                    <ReportDetails report={report} />
                                 </AccordionContent>
                             </AccordionItem>
                         ))}

@@ -16,8 +16,3 @@ export type Report = {
   treatmentNotes: string;
   fullReportText: string;
 };
-
-export type AISummary = {
-    summary: string;
-    keyInsights: string[];
-}
