@@ -1,0 +1,68 @@
+import type { Report } from './types';
+
+export const mockReports: Report[] = [
+  {
+    id: 'rep_001',
+    patientName: 'Kaelen Vance',
+    patientId: 'EAE-7B3-C4D',
+    date: '2277-08-15',
+    severity: 'Critical',
+    diagnosis: 'Advanced Nano-phage Infection',
+    vitals: {
+      'Quantum-Entangled Heart Rate': '120 bpm (Erratic)',
+      'Neuro-Synaptic Activity': '98.6% (Elevated)',
+      'Bio-Field Fluctuation': '3.4 µT (Unstable)',
+      'Aetheric Resonance': '2.1 THz (Harmonic Decay)',
+    },
+    treatmentNotes: 'Patient\'s cybernetic augments are rejecting the anti-phage serum. Recommend immediate stasis and consultation with a cyber-necromancer. The bio-field is showing signs of imminent collapse.',
+    fullReportText: `Patient: Kaelen Vance (EAE-7B3-C4D)\nDate: 2277-08-15\nSeverity: Critical\nDiagnosis: Advanced Nano-phage Infection\nObservations: Subject presents with severe systemic degradation. Nano-phages have breached the primary blood-brain barrier and are assimilating neural pathways. Cybernetic implants show signs of hostile takeover. Vital signs are highly unstable. Quantum-Entangled Heart Rate is at 120 bpm with erratic fluctuations. Neuro-Synaptic Activity is elevated at 98.6%, indicating extreme neurological stress. Bio-Field Fluctuation is unstable at 3.4 microteslas. Aetheric Resonance shows harmonic decay at 2.1 terahertz.\nTreatment Plan: Standard anti-phage serum protocol has failed; implants are actively rejecting the serum. Immediate induction into cryogenic stasis is required to prevent total system failure. Urgent consultation with a certified cyber-necromancer is advised to attempt esoteric data-exorcism.`,
+  },
+  {
+    id: 'rep_002',
+    patientName: 'Seraphina Ori',
+    patientId: 'EAE-9F1-A8B',
+    date: '2277-08-14',
+    severity: 'High',
+    diagnosis: 'Psionic Feedback Overload',
+    vitals: {
+      'Quantum-Entangled Heart Rate': '85 bpm (Stable)',
+      'Neuro-Synaptic Activity': '150.2% (Dangerously High)',
+      'Bio-Field Fluctuation': '12.8 µT (Radiating)',
+      'Aetheric Resonance': '35.5 THz (Chaotic Spectrum)',
+    },
+    treatmentNotes: 'Patient experienced a feedback loop while interfacing with the Aethelred Archive. Prescribed neural dampeners and a 72-hour sensory deprivation cycle. Monitor for residual psychic echoes.',
+    fullReportText: `Patient: Seraphina Ori (EAE-9F1-A8B)\nDate: 2277-08-14\nSeverity: High\nDiagnosis: Psionic Feedback Overload\nObservations: Subject lost consciousness while connected to the Aethelred Archive main psionic hub. EEG readings show dangerously high Neuro-Synaptic Activity at 150.2%. The patient's Bio-Field is radiating psionic energy, measured at 12.8 microteslas. Aetheric Resonance is chaotic, spanning multiple unauthorized spectra up to 35.5 terahertz.\nTreatment Plan: Administered a full dose of neural dampeners (Class IV). Patient is to be placed in a sensory deprivation tank for a 72-hour cycle to allow for synaptic reset. Continuous monitoring for psychic echoes and temporal displacement is mandatory.`,
+  },
+  {
+    id: 'rep_003',
+    patientName: 'Jax "Glitch" Ryder',
+    patientId: 'EAE-2C5-E6F',
+    date: '2277-08-12',
+    severity: 'Medium',
+    diagnosis: 'Minor Data-Worm Parasite',
+    vitals: {
+      'Quantum-Entangled Heart Rate': '72 bpm (Normal)',
+      'Neuro-Synaptic Activity': '85% (Sub-nominal)',
+      'Bio-Field Fluctuation': '1.1 µT (Stable)',
+      'Aetheric Resonance': '0.9 THz (Subtle Interference)',
+    },
+    treatmentNotes: 'A common data-worm contracted from an unsecured data port. Patient experiences minor visual glitches and auditory hallucinations. A simple logic bomb script has been administered. Expect full recovery in 48 hours.',
+    fullReportText: `Patient: Jax "Glitch" Ryder (EAE-2C5-E6F)\nDate: 2277-08-12\nSeverity: Medium\nDiagnosis: Minor Data-Worm Parasite\nObservations: Patient reports intermittent visual artifacts and hearing phantom system alerts. Analysis of their cortical data-port reveals a low-level "Bit-Tick" data-worm, likely from an unsecured public terminal. Vitals are mostly stable, with Neuro-Synaptic Activity at a sub-nominal 85% due to the parasite's processing load. Aetheric Resonance shows minor interference patterns at 0.9 THz.\nTreatment Plan: Administered a targeted logic-bomb script via direct data injection. The parasite should be purged within 24 hours. Recommended patient defragments their personal memory banks and updates their firewall. Full recovery expected within 48 hours.`,
+  },
+  {
+    id: 'rep_004',
+    patientName: 'Unit 734',
+    patientId: 'EAE-0A0-A0A',
+    date: '2277-08-11',
+    severity: 'Low',
+    diagnosis: 'Scheduled Memory Defragmentation',
+    vitals: {
+      'Quantum-Entangled Heart Rate': 'N/A',
+      'Neuro-Synaptic Activity': '60% (Optimal Idle)',
+      'Bio-Field Fluctuation': '0.2 µT (Baseline)',
+      'Aetheric Resonance': '0.1 THz (Standby)',
+    },
+    treatmentNotes: 'Standard maintenance procedure for android personnel. Memory banks have been defragmented and cognitive core recalibrated. Unit is cleared for duty.',
+    fullReportText: `Patient: Unit 734 (EAE-0A0-A0A)\nDate: 2277-08-11\nSeverity: Low\nDiagnosis: Scheduled Maintenance\nObservations: Standard diagnostic for an android unit. Positronic brain shows 12.4% memory fragmentation after last operational cycle. No signs of data corruption or viral infection. All systems operating within standard parameters. Neuro-Synaptic Activity at 60% indicates optimal idle state.\nTreatment Plan: Performed full memory defragmentation and recalibrated the cognitive core. Unit 734 passed all post-maintenance diagnostics and is cleared for immediate return to active duty.`,
+  },
+];
