@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
-import { Home as HomeIcon, Users, FileText, Settings, LogOut } from "lucide-react"
+import { Home as HomeIcon, Settings, LogOut } from "lucide-react"
 import ReportViewer from "@/components/report-viewer";
 import {
   DropdownMenu,
@@ -54,18 +54,6 @@ export default function Home() {
                 <SidebarMenuButton isActive tooltip="Dashboard">
                   <HomeIcon />
                   <span>Dashboard</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Patients">
-                  <Users />
-                  <span>Patients</span>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Reports">
-                  <FileText />
-                  <span>Reports</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
