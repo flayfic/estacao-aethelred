@@ -11,7 +11,6 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
 import { Home as HomeIcon, Settings, LogOut } from "lucide-react"
 import ReportViewer from "@/components/report-viewer";
 import {
@@ -34,7 +33,7 @@ const AethelredLogo = () => (
 )
 
 
-export default function Home() {
+export default function HomePage() {
   return (
     <SidebarProvider>
       <div className="flex min-h-screen bg-background">
@@ -43,7 +42,7 @@ export default function Home() {
             <div className="flex items-center gap-2 p-2">
                 <AethelredLogo />
                 <div className="flex flex-col">
-                  <span className="text-lg font-semibold tracking-tight text-foreground">Aethelred Viewer</span>
+                  <span className="text-lg font-semibold tracking-tight text-foreground">Visualizador Aethelred</span>
                   <span className="text-xs text-muted-foreground">Estação Aethelred</span>
                 </div>
             </div>
@@ -51,9 +50,9 @@ export default function Home() {
           <SidebarContent>
             <SidebarMenu>
               <SidebarMenuItem>
-                <SidebarMenuButton isActive tooltip="Dashboard">
+                <SidebarMenuButton isActive tooltip="Painel">
                   <HomeIcon />
-                  <span>Dashboard</span>
+                  <span>Painel</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -72,15 +71,15 @@ export default function Home() {
                   </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent side="top" align="start" className="w-56">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
                     <Settings className="mr-2 h-4 w-4" />
-                    <span>Settings</span>
+                    <span>Configurações</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
+                    <span>Sair</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -89,7 +88,7 @@ export default function Home() {
         <SidebarInset>
             <header className="sticky top-0 z-10 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:h-16 sm:px-6">
                 <SidebarTrigger className="md:hidden" />
-                <h1 className="text-xl font-semibold sm:text-2xl">Dashboard</h1>
+                <h1 className="text-xl font-semibold sm:text-2xl">Painel</h1>
             </header>
             <main className="flex-1 overflow-auto p-4 sm:p-6">
                 <ReportViewer />

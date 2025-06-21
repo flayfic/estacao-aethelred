@@ -9,35 +9,35 @@ import { HeartPulse, BrainCircuit, Signal, Waves, Info } from 'lucide-react';
 import DashboardMetrics from './dashboard-metrics';
 
 const severityVariantMap: Record<Report['severity'], 'destructive' | 'secondary' | 'default'> = {
-    'Critical': 'destructive',
-    'High': 'destructive',
-    'Medium': 'secondary',
-    'Low': 'default',
+    'Crítica': 'destructive',
+    'Alta': 'destructive',
+    'Média': 'secondary',
+    'Baixa': 'default',
 };
 
 const severityOutlineMap: Record<Report['severity'], boolean> = {
-    'Critical': false,
-    'High': true,
-    'Medium': false,
-    'Low': false,
+    'Crítica': false,
+    'Alta': true,
+    'Média': false,
+    'Baixa': false,
 }
 
 const VitalSignIcon = ({ vitalName }: { vitalName: string }) => {
-    if (vitalName.includes('Heart Rate')) return <HeartPulse className="h-5 w-5 text-primary" />;
-    if (vitalName.includes('Neuro-Synaptic')) return <BrainCircuit className="h-5 w-5 text-primary" />;
-    if (vitalName.includes('Bio-Field')) return <Signal className="h-5 w-5 text-primary" />;
-    if (vitalName.includes('Aetheric')) return <Waves className="h-5 w-5 text-primary" />;
+    if (vitalName.includes('Frequência Cardíaca')) return <HeartPulse className="h-5 w-5 text-primary" />;
+    if (vitalName.includes('Neuro-Sináptica')) return <BrainCircuit className="h-5 w-5 text-primary" />;
+    if (vitalName.includes('Biocampo')) return <Signal className="h-5 w-5 text-primary" />;
+    if (vitalName.includes('Etérea')) return <Waves className="h-5 w-5 text-primary" />;
     return <Info className="h-5 w-5 text-primary" />;
 };
 
 const ReportDetails = ({ report }: { report: Report }) => (
     <div className="space-y-4">
         <div>
-            <h4 className="font-semibold text-foreground">Diagnosis</h4>
+            <h4 className="font-semibold text-foreground">Diagnóstico</h4>
             <p className="text-muted-foreground">{report.diagnosis}</p>
         </div>
         <div>
-            <h4 className="font-semibold text-foreground">Vital Signs</h4>
+            <h4 className="font-semibold text-foreground">Sinais Vitais</h4>
             <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {Object.entries(report.vitals).map(([key, value]) => (
                     <Card key={key} className="p-3">
@@ -53,7 +53,7 @@ const ReportDetails = ({ report }: { report: Report }) => (
             </div>
         </div>
         <div>
-            <h4 className="font-semibold text-foreground">Treatment Notes</h4>
+            <h4 className="font-semibold text-foreground">Notas de Tratamento</h4>
             <p className="text-muted-foreground whitespace-pre-wrap">{report.treatmentNotes}</p>
         </div>
     </div>
@@ -66,8 +66,8 @@ export default function ReportViewer() {
             <DashboardMetrics reports={mockReports} />
             <Card>
                 <CardHeader>
-                    <CardTitle>Patient Reports</CardTitle>
-                    <CardDescription>Select a report to view details.</CardDescription>
+                    <CardTitle>Relatórios dos Pacientes</CardTitle>
+                    <CardDescription>Selecione um relatório para ver os detalhes.</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <Accordion type="single" collapsible className="w-full">

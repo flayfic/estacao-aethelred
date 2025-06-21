@@ -1,8 +1,8 @@
 export type VitalSigns = {
-  'Quantum-Entangled Heart Rate': string;
-  'Neuro-Synaptic Activity': string;
-  'Bio-Field Fluctuation': string;
-  'Aetheric Resonance': string;
+  'Frequência Cardíaca Quântica Entrelaçada': string;
+  'Atividade Neuro-Sináptica': string;
+  'Flutuação do Biocampo': string;
+  'Ressonância Etérea': string;
 };
 
 export type Report = {
@@ -10,7 +10,7 @@ export type Report = {
   patientName: string;
   patientId: string;
   date: string;
-  severity: 'Low' | 'Medium' | 'High' | 'Critical';
+  severity: 'Baixa' | 'Média' | 'Alta' | 'Crítica';
   diagnosis: string;
   vitals: VitalSigns;
   treatmentNotes: string;
