@@ -161,4 +161,20 @@ export const mockReports: Report[] = [
     treatmentNotes: 'Paciente com necrose galopante de origem desconhecida. Amostras de tecido são necessárias. Iniciado protocolo de "biópsia exploratória total". Múltiplas amostras de tecido profundo de todos os membros e do torso estão sendo coletadas com um trefina cirúrgica, sem anestesia, para evitar a contaminação da amostra.',
     fullReportText: `Paciente: Paciente Zero (Ala Contaminada) (SUS-PH0-5P4)\nData: 2025-07-21\nGravidade: Crítica\nDiagnóstico: Infecção Necrosante Desconhecida\nObservações: Paciente encontrado com lesões necróticas que se espalham visivelmente a cada hora. A etiologia é desconhecida e, portanto, o paciente é considerado uma ameaça biológica de nível máximo.\nSinais Vitais: FC: 135 bpm, PA: 90/60 mmHg, Temp: 41.1°C, SpO2: 89%.\nPlano de Tratamento: O paciente foi contido em uma sala de isolamento. Uma equipe cirúrgica, usando trajes de proteção total, está realizando coletas de amostra em grade por todo o corpo. A trefina, uma broca oca, é usada para extrair cilindros de tecido, incluindo pele, gordura, músculo e, em alguns casos, osso. A agonia do paciente é ignorada em prol da necessidade de obter amostras "puras" para análise.`,
   },
+  {
+    id: 'rep_011',
+    patientName: 'Elias Clark',
+    patientId: 'SUS-C14-RK0',
+    date: '2025-08-05',
+    severity: 'Crítica',
+    diagnosis: 'Síndrome Autoimune Neuromuscular Aguda',
+    vitals: {
+      'Frequência Cardíaca': '160 bpm',
+      'Pressão Arterial': '185/115 mmHg',
+      'Temperatura Corporal': '37.4°C',
+      'Saturação de Oxigênio': '93%',
+    },
+    treatmentNotes: 'Iniciada "Terapia de Reinicialização Neuroelétrica" da Dra. Vanessa Clark para sobrepujar os sinais autoimunes. O Dr. Emerald Clark enquadrou o procedimento como um "ato de vontade" para o paciente, onde ele deve dominar a dor para "reconquistar" seu próprio corpo.',
+    fullReportText: `Paciente: Elias Clark (SUS-C14-RK0)\nData: 2025-08-05\nGravidade: Crítica\nDiagnóstico: Síndrome Autoimune Neuromuscular Aguda\nObservações: O Dr. Emerald Clark realizou sessões intensivas com o paciente, argumentando que a fadiga e a dor eram manifestações de uma "vontade fraca" que permitiu à doença se instalar. Elias foi convencido de que apenas uma dor superior, conscientemente suportada, poderia "expulsar a doença" e provar seu direito de viver. Ele agora aceita o tratamento como seu "desafio final".\nSinais Vitais: FC: 160 bpm, PA: 185/115 mmHg (pico durante estimulação), Temp: 37.4°C, SpO2: 93%.\nPlano de Tratamento: A Dra. Vanessa Clark aplica eletrodos de alta voltagem diretamente sobre os principais plexos nervosos ao longo da coluna e membros. Pulsos elétricos são disparados para forçar contrações musculares violentas. Inicialmente, o paciente gritava, mas após várias sessões, ele agora suporta os choques em silêncio, com o olhar vago. O Dr. Emerald anota em seu relatório: "O paciente superou a necessidade de expressar sua dor. Sua passividade é um sinal claro de dissociação bem-sucedida da negatividade da doença. Excelente progresso."`,
+  },
 ];

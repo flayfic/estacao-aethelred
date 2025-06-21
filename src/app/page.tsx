@@ -60,10 +60,10 @@ export default function HomePage() {
                   <div className="group/menu-item relative">
                     <button className="flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 focus-visible:ring-ring">
                        <Avatar className="h-8 w-8">
-                         <AvatarImage src="https://placehold.co/100x100.png" alt="Dr. Ricardo Souza" data-ai-hint="doctor portrait"/>
-                         <AvatarFallback>RS</AvatarFallback>
+                         <AvatarImage src="https://firebasestudio.corp.google.com/static/agents/arda/images/42.png" alt="Dra. Vanessa Clark" data-ai-hint="woman portrait"/>
+                         <AvatarFallback>VC</AvatarFallback>
                        </Avatar>
-                       <span className="min-w-0 truncate">Dr. Ricardo Souza</span>
+                       <span className="min-w-0 truncate">Dra. Vanessa Clark</span>
                     </button>
                   </div>
                 </DropdownMenuTrigger>
